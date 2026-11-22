@@ -1,0 +1,80 @@
+---
+import Base from "../../layouts/Base.astro";
+import { GraduationCap, BookOpen, Lightbulb } from "@lucide/astro";
+import { resume } from "../../lib/info";
+---
+
+<Base
+  title={`About - ${resume.name}`}
+  description={`Profil akademik ${resume.name}, mahasiswa Statistika Universitas Cenderawasih.`}
+>
+  <section class="container mx-auto px-6 pt-16 pb-20">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
+        About Me
+      </p>
+
+      <h1 class="mb-6 text-4xl md:text-5xl font-bold tracking-tight">
+        Tentang Saya
+      </h1>
+
+      <p class="text-base md:text-lg text-foreground/85 leading-relaxed mb-10">
+        Saya adalah mahasiswa S1 Statistika di Universitas Cenderawasih.
+        Saya memiliki ketertarikan pada pengolahan data, analisis data,
+        visualisasi data, dan pemrograman. Saat ini, saya sedang
+        mengembangkan pengetahuan dan keterampilan melalui pembelajaran
+        akademik serta praktik secara mandiri.
+      </p>
+
+      <div class="mb-10">
+        <h2 class="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4 flex items-center gap-2">
+          <GraduationCap size={15} />
+          Pendidikan
+        </h2>
+
+        {resume.education?.map((edu) => (
+          <div class="border-l-2 border-border/60 pl-4 space-y-1">
+            <h3 class="text-base font-semibold">{edu.degree}</h3>
+            <p class="text-sm text-muted-foreground">{edu.institution}</p>
+            <p class="text-xs text-muted-foreground">{edu.period}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mb-10">
+        <h2 class="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4 flex items-center gap-2">
+          <BookOpen size={15} />
+          Bidang yang Dipelajari
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {resume.skills?.map((cat) => (
+            <div class="p-4 border border-border/60 rounded-md bg-card">
+              <h3 class="text-sm font-semibold mb-3">{cat.category}</h3>
+              <div class="flex flex-wrap gap-2">
+                {cat.items.map((skill) => (
+                  <span class="text-xs px-2 py-1 rounded border border-border text-muted-foreground">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
+          <Lightbulb size={15} />
+          Tujuan Pembelajaran
+        </h2>
+
+        <p class="text-sm md:text-base text-foreground/80 leading-relaxed">
+          Saya ingin terus mengembangkan kemampuan dalam bidang statistika
+          dan teknologi, khususnya dalam memahami, mengolah, menganalisis,
+          serta menyajikan data sebagai informasi yang bermanfaat.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

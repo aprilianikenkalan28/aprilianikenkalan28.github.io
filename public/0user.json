@@ -1,0 +1,70 @@
+{
+  "name": "Aprilia Niken Kalan",
+  "role": "Mahasiswa S1 Statistika",
+  "home": {
+    "bio": "Mahasiswa Statistika di Universitas Cenderawasih yang memiliki minat pada analisis data, visualisasi data, dan pemrograman.",
+    "note": "Belajar Statistika, Menjelajahi Data."
+  },
+  "site": {
+    "name": "Aprilia Niken Kalan",
+    "url": "http://localhost:4321",
+    "title": "Aprilia Niken Kalan",
+    "description": "Portofolio akademik Aprilia Niken Kalan, mahasiswa S1 Statistika Universitas Cenderawasih.",
+    "locale": "id_ID",
+    "ogImage": ""
+  },
+  "contacts": [
+    {
+      "label": "Email",
+      "text": "aprilianikenkalan28@gmail.com",
+      "href": "mailto:aprilianikenkalan28@gmail.com"
+    }
+  ],
+  "resume": {
+    "name": "Aprilia Niken Kalan",
+    "role": "Mahasiswa S1 Statistika",
+    "bio": "Mahasiswa Universitas Cenderawasih yang tertarik pada pengolahan dan analisis data serta pengembangan kemampuan di bidang teknologi.",
+    "downloads": {
+      "cv": {
+        "label": "CV",
+        "text": "Belum tersedia",
+        "href": "#",
+        "filename": "Aprilia-Niken-Kalan-CV.pdf"
+      },
+      "pgp": {
+        "label": "PGP",
+        "text": "Belum tersedia",
+        "href": "#",
+        "filename": "publickey.asc"
+      }
+    },
+    "experience": [],
+    "skills": [
+      {
+        "category": "Microsoft Excel",
+        "items": [
+          "Penggunaan rumus",
+          "Pengolahan data",
+          "Pembuatan tabel",
+          "Pembuatan grafik"
+        ]
+      },
+      {
+        "category": "Programming",
+        "items": [
+          "Python (Pembelajaran)"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "S1 Statistika",
+        "institution": "Universitas Cenderawasih",
+        "period": "2026 - Sekarang",
+        "details": [
+          "Program Sarjana Statistika"
+        ]
+      }
+    ]
+  }
+}
