@@ -1,4 +1,4 @@
----
+﻿---
 import Base from "../layouts/Base.astro";
 import { Mail, MapPin } from "@lucide/astro";
 import { resume } from "../lib/info";
@@ -11,15 +11,15 @@ import { resume } from "../lib/info";
   <section class="container mx-auto px-6 pt-16 pb-20">
     <div class="max-w-3xl mx-auto">
 
-      <p class="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
+      <p data-i18n="contactLabel" class="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
         Contact
       </p>
 
-      <h1 class="mb-6 text-4xl md:text-5xl font-bold tracking-tight">
+      <h1 data-i18n="contactTitle" class="mb-6 text-4xl md:text-5xl font-bold tracking-tight">
         Hubungi Saya
       </h1>
 
-      <p class="text-base md:text-lg text-foreground/85 leading-relaxed mb-10">
+      <p data-i18n="contactDescription" class="text-base md:text-lg text-foreground/85 leading-relaxed mb-10">
         Saya terbuka untuk terhubung, berbagi ide, berdiskusi,
         serta menjajaki kesempatan belajar dan kolaborasi.
         Silakan menghubungi saya melalui platform berikut.
@@ -46,7 +46,7 @@ import { resume } from "../lib/info";
           rel="noopener noreferrer"
           class="flex items-center gap-4 p-5 border border-border/60 rounded-md bg-card hover:border-primary/50 transition-colors"
         >
-          <span class="text-xl shrink-0" aria-label="Instagram">📷</span>
+          <span class="text-xl shrink-0" aria-label="Instagram">ðŸ“·</span>
           <div>
             <h2 class="text-sm font-semibold mb-1">Instagram</h2>
             <p class="text-sm text-muted-foreground">
@@ -61,7 +61,7 @@ import { resume } from "../lib/info";
           rel="noopener noreferrer"
           class="flex items-center gap-4 p-5 border border-border/60 rounded-md bg-card hover:border-primary/50 transition-colors"
         >
-          <span class="text-xl shrink-0" aria-label="GitHub">💻</span>
+          <span class="text-xl shrink-0" aria-label="GitHub">ðŸ’»</span>
           <div>
             <h2 class="text-sm font-semibold mb-1">GitHub</h2>
             <p class="text-sm text-muted-foreground">
@@ -73,7 +73,7 @@ import { resume } from "../lib/info";
         <div class="flex items-center gap-4 p-5 border border-border/60 rounded-md bg-card">
           <MapPin size={22} class="text-muted-foreground shrink-0" />
           <div>
-            <h2 class="text-sm font-semibold mb-1">Location</h2>
+            <h2 data-i18n="location" class="text-sm font-semibold mb-1">Location</h2>
             <p class="text-sm text-muted-foreground">
               Jayapura, Papua, Indonesia
             </p>
@@ -84,3 +84,8 @@ import { resume } from "../lib/info";
     </div>
   </section>
 </Base>
+
+
+
+
+

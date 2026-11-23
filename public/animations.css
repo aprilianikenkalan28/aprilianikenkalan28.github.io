@@ -1,0 +1,307 @@
+﻿html {
+  scroll-behavior: smooth;
+}
+
+/* AMBIENT GLOW */
+body {
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  width: 550px;
+  height: 550px;
+  top: -220px;
+  right: -180px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(125, 80, 255, .13),
+    rgba(0, 220, 255, .07) 40%,
+    transparent 70%
+  );
+  filter: blur(30px);
+  pointer-events: none;
+  z-index: 0;
+  animation: ambientFloat 12s ease-in-out infinite alternate;
+}
+
+@keyframes ambientFloat {
+  from { transform: translate(-30px, 0) scale(1); }
+  to { transform: translate(30px, 100px) scale(1.2); }
+}
+
+/* SCROLL PROGRESS */
+#wow-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  z-index: 99999;
+  background: linear-gradient(90deg, #8b5cf6, #06b6d4, #ec4899);
+  box-shadow: 0 0 12px rgba(139, 92, 246, .8);
+}
+
+/* SCROLL REVEAL */
+.wow-reveal {
+  opacity: 0;
+  transform: translateY(45px) scale(.96);
+  filter: blur(5px);
+  transition:
+    opacity .8s cubic-bezier(.2,.7,.2,1),
+    transform .8s cubic-bezier(.2,.7,.2,1),
+    filter .8s ease;
+  transition-delay: var(--wow-delay, 0ms);
+}
+
+.wow-reveal.wow-show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* HEADINGS */
+main h1 {
+  background: linear-gradient(
+    110deg,
+    currentColor 15%,
+    #8b5cf6 48%,
+    #06b6d4 75%,
+    currentColor 100%
+  );
+  background-size: 220% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: background-position .8s ease;
+}
+
+main h1:hover {
+  background-position: 100% center;
+  -webkit-text-fill-color: transparent;
+}
+
+/* PROJECT CARDS */
+main article,
+main .grid > *,
+.project-card,
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition:
+    transform .35s cubic-bezier(.2,.8,.2,1),
+    box-shadow .35s ease,
+    border-color .35s ease;
+}
+
+main article:hover,
+main .grid > *:hover,
+.project-card:hover,
+.card:hover {
+  transform: translateY(-9px) scale(1.015);
+  border-color: rgba(139, 92, 246, .55);
+  box-shadow:
+    0 15px 45px rgba(90, 50, 180, .14),
+    0 0 18px rgba(6, 182, 212, .08);
+}
+
+/* SHINE EFFECT */
+main article::after,
+main .grid > *::after,
+.project-card::after,
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    115deg,
+    transparent 25%,
+    rgba(255,255,255,.14) 45%,
+    transparent 65%
+  );
+  transform: translateX(-120%);
+  transition: transform .7s ease;
+  pointer-events: none;
+}
+
+main article:hover::after,
+main .grid > *:hover::after,
+.project-card:hover::after,
+.card:hover::after {
+  transform: translateX(120%);
+}
+
+/* BUTTON WOW */
+button,
+a[class*="bg-"],
+a[class*="rounded"] {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform .25s ease,
+    box-shadow .3s ease,
+    filter .3s ease;
+}
+
+button:hover,
+a[class*="bg-"]:hover,
+a[class*="rounded"]:hover {
+  transform: translateY(-3px) scale(1.025);
+  filter: brightness(1.08);
+  box-shadow: 0 8px 25px rgba(120, 80, 255, .2);
+}
+
+button:active,
+a[class*="bg-"]:active {
+  transform: scale(.96);
+}
+
+/* IMAGE POP */
+img {
+  transition:
+    transform .55s cubic-bezier(.2,.8,.2,1),
+    filter .4s ease;
+}
+
+img:hover {
+  transform: scale(1.055);
+  filter: saturate(1.15);
+}
+
+/* NAVIGATION */
+nav a {
+  transition:
+    color .25s ease,
+    text-shadow .25s ease;
+}
+
+nav a:hover {
+  text-shadow: 0 0 14px rgba(139, 92, 246, .4);
+}
+
+/* INTERACTIVE CURSOR GLOW */
+.wow-glow {
+  transition: box-shadow .3s ease;
+}
+
+.wow-glow:hover {
+  box-shadow:
+    0 0 0 1px rgba(139, 92, 246, .25),
+    0 0 28px rgba(139, 92, 246, .13);
+}
+
+/* FOCUS */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 4px;
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+
+  .wow-reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+/* ===== WOW CUSTOM CURSOR ===== */
+@media (hover: hover) and (pointer: fine) {
+  body, a, button, [role="button"] {
+    cursor: none !important;
+  }
+
+  input, textarea, select, [contenteditable="true"] {
+    cursor: auto !important;
+  }
+
+  .wow-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ffffff;
+    pointer-events: none;
+    z-index: 999999;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 12px #a855f7, 0 0 25px #06b6d4;
+    transition: width .2s ease, height .2s ease,
+      background .2s ease, opacity .2s ease;
+  }
+
+  .wow-cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 38px;
+    height: 38px;
+    border: 2px solid #a855f7;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999998;
+    transform: translate(-50%, -50%);
+    transition: width .25s ease, height .25s ease,
+      border-color .25s ease, background .25s ease;
+    box-shadow: 0 0 15px #a855f755;
+  }
+
+  .wow-cursor.hover {
+    width: 7px;
+    height: 7px;
+    background: #06b6d4;
+  }
+
+  .wow-cursor-ring.hover {
+    width: 58px;
+    height: 58px;
+    border-color: #06b6d4;
+    background: #06b6d41a;
+  }
+
+  .wow-cursor.click {
+    width: 18px;
+    height: 18px;
+    background: #ec4899;
+  }
+
+  .wow-cursor-ring.click {
+    width: 22px;
+    height: 22px;
+    border-color: #ec4899;
+  }
+
+  .wow-click-ripple {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #a855f7;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999997;
+    transform: translate(-50%, -50%);
+    animation: wow-ripple .55s ease-out forwards;
+  }
+
+  @keyframes wow-ripple {
+    to {
+      width: 85px;
+      height: 85px;
+      opacity: 0;
+      border-color: #06b6d4;
+    }
+  }
+}
+

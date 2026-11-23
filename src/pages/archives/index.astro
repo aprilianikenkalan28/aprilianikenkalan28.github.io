@@ -1,4 +1,4 @@
----
+﻿---
 import Base from "../../layouts/Base.astro";
 import ArchiveList from "../../components/archives/ArchiveList";
 import { getArchivePosts } from "../../lib/archive_data";
@@ -9,10 +9,11 @@ const clientPosts = await getArchivePosts();
   <section class="container mx-auto px-6 pt-16 pb-20">
     <div class="max-w-3xl mx-auto mb-8">
       <h1 class="text-4xl font-bold tracking-tight text-foreground">Blog</h1>
-      <p class="mt-2 text-base text-muted-foreground leading-relaxed">
+      <p data-i18n="archiveDescription" class="mt-2 text-base text-muted-foreground leading-relaxed">
         Notes on software engineering, performance, and the tools I use to build things.
       </p>
     </div>
     <ArchiveList posts={clientPosts} client:load />
   </section>
 </Base>
+

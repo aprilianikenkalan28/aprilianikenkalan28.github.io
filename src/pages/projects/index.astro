@@ -1,4 +1,4 @@
----
+﻿---
 import Base from "../../layouts/Base.astro";
 
 const projects = [
@@ -36,11 +36,9 @@ const projects = [
   <main class="container mx-auto px-6 py-16">
     <div class="mx-auto max-w-4xl">
 
-      <p class="text-sm text-accent">PORTFOLIO</p>
+      <p class="text-sm text-accent" data-i18n="projectsLabel">PORTFOLIO</p>
 
-      <h1 class="mt-3 text-4xl font-semibold">
-        Projects
-      </h1>
+      <h1 class="mt-3 text-4xl font-semibold" data-i18n="projectsTitle">Projects</h1>
 
       <p class="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
         Berikut beberapa proyek dan tugas yang saya kerjakan
@@ -54,14 +52,14 @@ const projects = [
             class="rounded-xl border border-border p-6 transition-colors hover:border-accent"
           >
             <p class="text-sm text-accent">
-              PROJECT {project.number}
+              <span data-i18n="projectLabel">PROJECT</span> {project.number}
             </p>
 
-            <h2 class="mt-4 text-xl font-semibold">
+            <h2 class="mt-4 text-xl font-semibold" data-i18n={project.number === "01" ? "project1Title" : project.number === "02" ? "project2Title" : "project3Title"}>
               {project.title}
             </h2>
 
-            <p class="mt-3 text-sm text-muted-foreground">
+            <p class="mt-3 text-sm text-muted-foreground" data-i18n={project.number === "01" ? "project1Description" : project.number === "02" ? "project2Description" : "project3Description"}>
               {project.description}
             </p>
 
@@ -74,7 +72,7 @@ const projects = [
                 href={project.href}
                 class="inline-block rounded-md border border-border px-4 py-2 text-sm font-medium hover:bg-secondary"
               >
-                Lihat Proyek →
+                Lihat Proyek â†’
               </a>
             </div>
           </article>
@@ -84,3 +82,7 @@ const projects = [
     </div>
   </main>
 </Base>
+
+
+
+

@@ -1,4 +1,4 @@
-
+﻿
 ---
 import Base from "../../../layouts/Base.astro";
 import { resume, contacts } from "../../../lib/info";
@@ -19,9 +19,7 @@ import { resume, contacts } from "../../../lib/info";
         {resume.role}
       </p>
 
-      <h2 class="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
-        Connect
-      </h2>
+      <h2 class="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3" data-i18n="resumeConnect">Connect</h2>
 
       <div class="mb-10 p-4 border border-border/70 bg-card rounded-lg">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -65,8 +63,8 @@ import { resume, contacts } from "../../../lib/info";
               download={resume.downloads.cv.filename ?? "cv.pdf"}
               class="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-md border border-border bg-foreground text-background hover:bg-foreground/90 transition-colors shadow-sm"
             >
-              <span aria-hidden="true">↓</span>
-              Download CV
+              <span aria-hidden="true">â†“</span>
+              <span data-i18n="resumeDownload">Download CV</span>
             </a>
 
             <a
@@ -74,7 +72,7 @@ import { resume, contacts } from "../../../lib/info";
               download={resume.downloads.pgp.filename ?? "publickey.asc"}
               class="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-md border border-border bg-card text-foreground hover:border-accent/50 hover:text-accent transition-colors"
             >
-              <span aria-hidden="true">🔑</span>
+              <span aria-hidden="true">ðŸ”‘</span>
               PGP Key
             </a>
           </div>
@@ -111,8 +109,8 @@ import { resume, contacts } from "../../../lib/info";
       {resume.experience && resume.experience.length > 0 && (
         <div class="mb-10">
           <h2 class="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4 flex items-center gap-2">
-            <span aria-hidden="true">💼</span>
-            <span>Experience</span>
+            <span aria-hidden="true">ðŸ’¼</span>
+            <span data-i18n="resumeExperience">Experience</span>
           </h2>
 
           <div class="space-y-6">
@@ -147,8 +145,8 @@ import { resume, contacts } from "../../../lib/info";
       {resume.skills && resume.skills.length > 0 && (
         <div class="mb-10">
           <h2 class="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4 flex items-center gap-2">
-            <span aria-hidden="true">🛡️</span>
-            <span>Technical Skills</span>
+            <span aria-hidden="true">ðŸ›¡ï¸</span>
+            <span data-i18n="resumeSkills">Technical Skills</span>
           </h2>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -174,8 +172,8 @@ import { resume, contacts } from "../../../lib/info";
       {resume.education && resume.education.length > 0 && (
         <div class="mb-10">
           <h2 class="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4 flex items-center gap-2">
-            <span aria-hidden="true">🎓</span>
-            <span>Education & Certifications</span>
+            <span aria-hidden="true">ðŸŽ“</span>
+            <span data-i18n="resumeEducation">Education & Certifications</span>
           </h2>
 
           <div class="space-y-4">
@@ -203,3 +201,8 @@ import { resume, contacts } from "../../../lib/info";
     </div>
   </section>
 </Base>
+
+
+
+
+
