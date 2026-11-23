@@ -1,4 +1,4 @@
-﻿---
+---
 import Base from "../../layouts/Base.astro";
 
 const projects = [
@@ -70,9 +70,13 @@ const projects = [
 
               <a
                 href={project.href}
-                class="inline-block rounded-md border border-border px-4 py-2 text-sm font-medium hover:bg-secondary"
+                class="group inline-flex items-center gap-2 rounded-md border border-border px-4 py-2 text-sm font-semibold transition-all duration-300 hover:border-purple-500 hover:bg-purple-500/10 hover:text-purple-400 hover:shadow-[0_0_18px_rgba(168,85,247,0.35)]"
               >
-                Lihat Proyek â†’
+                Lihat Proyek
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true">
+                  <path d="M7 17 17 7"/>
+                  <path d="M7 7h10v10"/>
+                </svg>
               </a>
             </div>
           </article>
