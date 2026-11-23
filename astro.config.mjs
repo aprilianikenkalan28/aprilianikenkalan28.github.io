@@ -70,7 +70,7 @@ const processor = unified({
     ],
 })
 
-eexport default defineConfig({
+export default defineConfig({
   site: 'https://aprilianikenkalan28.github.io',
   integrations: [react()],
     vite: {

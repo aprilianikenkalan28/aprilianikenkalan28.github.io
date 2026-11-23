@@ -1,7 +1,7 @@
 ---
-import Base from "../../layouts/Base.astro";
-import { Mail, Instagram, Github, MapPin } from "@lucide/astro";
-import { resume } from "../../lib/info";
+import Base from "../layouts/Base.astro";
+import { Mail, MapPin } from "@lucide/astro";
+import { resume } from "../lib/info";
 ---
 
 <Base
@@ -46,7 +46,7 @@ import { resume } from "../../lib/info";
           rel="noopener noreferrer"
           class="flex items-center gap-4 p-5 border border-border/60 rounded-md bg-card hover:border-primary/50 transition-colors"
         >
-          <Instagram size={22} class="text-muted-foreground shrink-0" />
+          <span class="text-xl shrink-0" aria-label="Instagram">📷</span>
           <div>
             <h2 class="text-sm font-semibold mb-1">Instagram</h2>
             <p class="text-sm text-muted-foreground">
@@ -61,7 +61,7 @@ import { resume } from "../../lib/info";
           rel="noopener noreferrer"
           class="flex items-center gap-4 p-5 border border-border/60 rounded-md bg-card hover:border-primary/50 transition-colors"
         >
-          <Github size={22} class="text-muted-foreground shrink-0" />
+          <span class="text-xl shrink-0" aria-label="GitHub">💻</span>
           <div>
             <h2 class="text-sm font-semibold mb-1">GitHub</h2>
             <p class="text-sm text-muted-foreground">
