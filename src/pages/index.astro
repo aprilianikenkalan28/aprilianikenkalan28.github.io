@@ -1,5 +1,6 @@
-﻿---
+---
 import Base from "../layouts/Base.astro";
+import { ArrowUpRight } from "@lucide/astro";
 import siteInfo from "../../public/0user.json";
 ---
 
@@ -33,7 +34,7 @@ import siteInfo from "../../public/0user.json";
 
         <div class="hero-buttons">
           <a href="/about/" class="btn-primary">
-            About Me <span>→</span>
+            About Me <ArrowUpRight size={18} aria-hidden="true" />
           </a>
           <a href="/projects/" class="btn-secondary">
             <span class="grid-icon">▦</span> My Projects
